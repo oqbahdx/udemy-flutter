@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "171255212037",
+    "project_id": "udemy-ad24b",
+    "storage_bucket": "udemy-ad24b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:171255212037:android:c101fc3418d62d2a67d46c",
+        "android_client_info": {
+          "package_name": "com.udemy.udemy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "171255212037-kps64oui16t2mc2dpp19gt5kgjulf400.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.udemy.udemy",
+            "certificate_hash": "b8e9996386177f1a99cdbfb54b7235206009fcca"
+          }
+        },
+        {
+          "client_id": "171255212037-1genus23ve2so6tpqeai3oje9m42dke6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCU8ztWcCxUPlkaRgzpHM2p6ciqTv7oSiw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "171255212037-1genus23ve2so6tpqeai3oje9m42dke6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
