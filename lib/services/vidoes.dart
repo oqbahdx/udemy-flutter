@@ -17,6 +17,9 @@ class _VideosState extends State<Videos> {
   @override
   void initState() {
     chewieController = ChewieController(
+      cupertinoProgressColors: ChewieProgressColors(
+        backgroundColor: Colors.grey
+      ),
       videoPlayerController: widget.videoPlayerController,
       looping: widget.isLoading,
       aspectRatio: 16/9,

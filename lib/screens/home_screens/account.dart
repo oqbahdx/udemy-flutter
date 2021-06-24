@@ -2,19 +2,33 @@ import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:udemy/services/authintication.dart';
+import 'package:udemy/services/storge.dart';
 
 import '../landing_page.dart';
 
 
 class Account extends StatefulWidget {
-  const Account({Key key}) : super(key: key);
 
   @override
   _AccountState createState() => _AccountState();
 }
 
 class _AccountState extends State<Account> {
+
   Authentication authentication = Authentication();
+  SecureStorage secureStorage = SecureStorage();
+  String finalName,finalEmail;
+
+  @override
+  void initState() {
+    secureStorage.readSecureData('email').then((value){
+      finalEmail = value;
+    });
+    secureStorage.readSecureData('name').then((value){
+      finalName = value;
+    });
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,7 +63,7 @@ class _AccountState extends State<Account> {
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           Icon(EvaIcons.google,color: Colors.white,),
-                          Text('oqbahdx@gmail.com',style: TextStyle(
+                          Text('',style: TextStyle(
                             color: Colors.grey,
                             fontSize: 20
                           ),),
@@ -142,6 +156,8 @@ class _AccountState extends State<Account> {
                   ),),
                   onPressed: ()async{
                     await authentication.googleSignOut().whenComplete((){
+                      secureStorage.deleteSecureData('email');
+                    }).whenComplete((){
                       Navigator.pushReplacement(context, PageTransition(
                           child:LandingPage(), type: PageTransitionType.bottomToTop));
                     });

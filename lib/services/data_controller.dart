@@ -9,21 +9,10 @@ class DataController extends GetxController {
     return snapshot.docs;
   }
 
-  @override
-  void onInit() {
-    // TODO: implement onInit
-    super.onInit();
-  }
-
-  @override
-  void onClose() {
-    // TODO: implement onClose
-    super.onClose();
-  }
-
-  @override
-  void onReady() {
-    // TODO: implement onReady
-    super.onReady();
+  Future queryData(String queryString) async {
+    return FirebaseFirestore.instance
+        .collection('featured')
+        .where('title', isGreaterThanOrEqualTo: queryString)
+        .get();
   }
 }
